@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+    <title>Напишите нам</title>
+</head>
+<body>
+    <header>
+        <h1>Напишите нам</h1>
+    </header>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <table cellpadding="5">
+            <tr>
+                <td width=150>
+                    <label>Ваше имя:</label>
+                </td>
+                <td width=500>
+                    <input type="text" name="name" placeholder="Введите Ваше имя" formControlName="name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Ваш Email:</label>
+                </td>
+                <td>
+                    <input type="text" name="email" placeholder="Введите Ваш email" pattern="^[a-z]+$\@\^[a-z]+$\.\^[a-z]+$" formControlName="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Ваш телефон:</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" id="phone" formControlName="phone" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Тема:</label>
+                </td>
+                <td>
+                    <select formControlName="theme" required>
+                        <option>Техподдержка</option>
+                        <option>Продажи</option>
+                        <option>Другое</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Ваше сообщение:</label>
+                </td>
+                <td>
+                    <textarea name="text" cols="40" rows="3" formControlName="text" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="button" type="submit">
+                        Отправить письмо!
+                    </button>
+                </td>
+        </table>
+    </form>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script>
+    $("#phone").mask("8(999)999-99-99");
+</script>
